@@ -1,5 +1,11 @@
 # Rest API Rust
 
+## Reference implementation
+
+[![test](https://github.com/slavik-pastushenko/rest-api-rust/actions/workflows/test.yml/badge.svg)](https://github.com/slavik-pastushenko/rest-api-rust/actions/workflows/test.yml)
+
+## Contributing
+
 - Build an application:
 
 ```bash
