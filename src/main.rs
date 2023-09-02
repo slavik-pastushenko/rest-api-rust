@@ -13,7 +13,7 @@ pub struct Response {
 #[get("/health")]
 async fn health_check() -> impl Responder {
     let response = Response {
-        message: "Everything works fine".to_string(),
+        message: "OK".to_string(),
     };
 
     HttpResponse::Ok().json(response)
@@ -37,7 +37,7 @@ async fn main() -> std::io::Result<()> {
     let todo_db = repository::tweet::Database::new();
     let app_data = web::Data::new(todo_db);
 
-    println!("🚀 Server started successfully on port 3000");
+    println!("Server started successfully on port 3000");
 
     HttpServer::new(move ||
         App::new()

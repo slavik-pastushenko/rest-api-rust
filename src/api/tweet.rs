@@ -2,14 +2,14 @@ use actix_web::web;
 use actix_web::{ web::{ Data, Json }, post, put, get, delete, HttpResponse };
 use crate::{ models::tweet::Tweet, repository::tweet::Database };
 
-#[get("/tweets")]
+#[get("")]
 pub async fn get_tweets(db: web::Data<Database>) -> HttpResponse {
     let tweets = db.get_tweets();
 
     HttpResponse::Ok().json(tweets)
 }
 
-#[get("/tweets/{id}")]
+#[get("{id}")]
 pub async fn get_tweet_by_id(db: web::Data<Database>, id: web::Path<String>) -> HttpResponse {
     let tweet = db.get_tweet_by_id(&id);
 
@@ -19,7 +19,7 @@ pub async fn get_tweet_by_id(db: web::Data<Database>, id: web::Path<String>) -> 
     }
 }
 
-#[post("/tweets")]
+#[post("")]
 pub async fn create_tweet(db: Data<Database>, payload: Json<Tweet>) -> HttpResponse {
     let tweet = db.create_tweet(payload.into_inner());
 
@@ -29,7 +29,7 @@ pub async fn create_tweet(db: Data<Database>, payload: Json<Tweet>) -> HttpRespo
     }
 }
 
-#[put("/tweets/{id}")]
+#[put("{id}")]
 pub async fn update_tweet(
     db: web::Data<Database>,
     id: web::Path<String>,
@@ -43,7 +43,7 @@ pub async fn update_tweet(
     }
 }
 
-#[delete("/tweets/{id}")]
+#[delete("{id}")]
 pub async fn delete_tweet(db: web::Data<Database>, id: web::Path<String>) -> HttpResponse {
     let tweet = db.delete_tweet(&id);
 
@@ -56,7 +56,7 @@ pub async fn delete_tweet(db: web::Data<Database>, id: web::Path<String>) -> Htt
 pub fn config(cfg: &mut web::ServiceConfig) {
     cfg.service(
         web
-            ::scope("/api")
+            ::scope("/api/tweets")
             .service(get_tweets)
             .service(get_tweet_by_id)
             .service(create_tweet)

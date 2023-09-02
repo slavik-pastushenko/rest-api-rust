@@ -6,13 +6,19 @@
 cargo build
 ```
 
+- Test an application:
+
+```bash
+cargo test
+```
+
 - Run an application:
 
 ```bash
 cargo run
 ```
 
-- Run an application (watch mode):
+- Run an application in watch mode:
 
 ```bash
 cargo install cargo-watch 

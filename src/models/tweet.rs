@@ -11,8 +11,8 @@ pub struct Tweet {
     pub message: String,
 
     /// The updated date of a tweet
-    pub updated_at: DateTime<Utc>,
+    pub updated_at: Option<DateTime<Utc>>,
 
     /// The created date of a tweet
-    pub created_at: DateTime<Utc>,
+    pub created_at: Option<DateTime<Utc>>,
 }
