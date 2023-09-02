@@ -3,6 +3,19 @@
 ## Reference implementation
 
 [![test](https://github.com/slavik-pastushenko/rest-api-rust/actions/workflows/test.yml/badge.svg)](https://github.com/slavik-pastushenko/rest-api-rust/actions/workflows/test.yml)
+![GitHub issues](https://img.shields.io/github/issues/slavik-pastushenko/rest-api-rust)
+![GitHub](https://img.shields.io/github/license/slavik-pastushenko/rest-api-rust)
+
+Provides a RESTful API for managing tweets.
+
+## Features
+
+- Create a tweet
+- Update a tweet
+- Delete a tweet
+- Get a tweet
+- Get all tweets
+
 
 ## Contributing
 
