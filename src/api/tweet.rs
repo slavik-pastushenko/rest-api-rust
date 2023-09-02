@@ -1,6 +1,6 @@
 use actix_web::web;
 use actix_web::{ web::{ Data, Json }, post, put, get, delete, HttpResponse };
-use crate::{ models::tweet::Tweet, repository::tweet::Database };
+use crate::{ models::tweet::Tweet, repositories::tweet::Database };
 
 #[get("")]
 pub async fn get_tweets(db: web::Data<Database>) -> HttpResponse {

@@ -3,7 +3,7 @@ use serde::Serialize;
 
 mod api;
 mod models;
-mod repository;
+mod repositories;
 
 #[derive(Serialize)]
 pub struct Response {
@@ -34,7 +34,7 @@ async fn main() -> std::io::Result<()> {
     }
     env_logger::init();
 
-    let todo_db = repository::tweet::Database::new();
+    let todo_db = repositories::tweet::Database::new();
     let app_data = web::Data::new(todo_db);
 
     println!("Server started successfully on port 3000");
